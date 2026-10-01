@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Nova+Mono&display=swap');    
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Nova Mono", monospace;
+}
+
+header {
+    padding: 1em;
+    text-align: center;
+    align-content: center;
+    background-color: skyblue;
+}
+
+#logo {
+    font-family: "MedievalSharp", cursive;
+    font-size: 2.5em;
+    font-weight: 800;
+    color: goldenrod;
+}
+
+section {
+    background-color: lightgoldenrodyellow;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+#grid {
+    display: grid;
+    gap: 0.7em;
+}
+
+#grid img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+#grid article {
+    overflow: hidden;
+}
+
+article {
+    position: relative;
+}
+
+article h2 {
+    background-color: black;
+    color: white;
+    font-family: "MedievalSharp", cursive;
+    padding: 0.3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8em;
+}
+
+article p {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    padding: 0.2em;
+    background-color: white;
+    font-size: 0.5em;
+}
+
+/* Tablet */
+
+@media all and (min-width:768px) {
+    #grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header, #art3 {
+        grid-column:span 2;
+    }
+
+    article h2 {
+        font-size: 1em;
+    }
+
+    article p {
+        font-size: 0.7em;
+    }
+}
+
+/* Escritorio */
+
+@media all and (min-width:1200px) {
+    #grid {
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        height: 100vh;
+        gap: 1.3em;
+    }
+
+    header, #art3 {
+        grid-column: span 1;
+    }
+
+    #art1, #art2 {
+        grid-row: span 2;
+    }
+    
+    #art3 {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    #art4 {
+        grid-column: span 2;
+        grid-row: span 2;
+    } 
+
+    article h2 {
+        font-size: 1.2em;
+    }
+
+    article p {
+        font-size: 0.9em;
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    article:hover p {
+        opacity: 1;
+    }
+}
